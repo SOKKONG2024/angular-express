@@ -26,13 +26,12 @@ but is slower.
 
 ### Angular CLI interactive prompt (gotcha)
 
-On a fresh VM the Angular CLI (`ng serve`, `ng build`, `ng test`) prompts once
-for anonymous analytics and **blocks/hangs waiting for TTY input**. Run Angular
-commands non-interactively by disabling analytics, e.g.:
-
-```bash
-NG_CLI_ANALYTICS=false npm start
-```
+By default the Angular CLI (`ng serve`, `ng build`, `ng test`) prompts once for
+anonymous analytics and **blocks/hangs waiting for TTY input**. This repo now
+disables that via `cli.analytics: false` in `frontend/angular.json`, so the
+prompt no longer appears. If you ever hit it in a different context, run Angular
+commands non-interactively with `NG_CLI_ANALYTICS=false`, e.g.
+`NG_CLI_ANALYTICS=false npm start`.
 
 ### Tests / lint (pre-existing repo state)
 
